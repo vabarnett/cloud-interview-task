@@ -1,11 +1,12 @@
 FROM python:3.8-alpine
 
-COPY ./requirements.txt /app/requirements.txt
+COPY ./. /app/
+EXPOSE 3030
 
 WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python3" ]
 
 CMD [ "app.py" ]
